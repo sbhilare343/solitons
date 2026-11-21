@@ -1,0 +1,75 @@
+{
+  "experiment_id": "EXP-009",
+  "status": "frozen_before_test",
+  "test_gate": true,
+  "frozen_date": "2026-11-16",
+  "partition": {
+    "target": "return_pct",
+    "units": "percentage-point log return",
+    "train_n": 2815,
+    "train_start": "2010-01-05",
+    "train_end": "2021-03-11",
+    "validation_n": 603,
+    "validation_start": "2021-03-12",
+    "validation_end": "2023-08-03",
+    "test_n": 604,
+    "test_start": "2023-08-04",
+    "test_end": "2025-12-30"
+  },
+  "forecast_policy": {
+    "horizon": 1,
+    "parameters_fixed_after_training": true,
+    "forecast_before_target_reveal": true,
+    "revealed_target_may_enter_next_origin_history": true,
+    "random_shuffle": false,
+    "scaler_fit_partition": "training only"
+  },
+  "primary_forecast": "frozen_combination",
+  "selected_single_forecast": "training_mean",
+  "combination": {
+    "a": "zero",
+    "b": "training_mean",
+    "weight_a": 0.4999432456972872,
+    "weight_b": 0.5000567543027128,
+    "fit_partition": "validation",
+    "source_artifact": "results/tables/exp007_combinations_20261116T165831Z_7e52.json",
+    "source_sha256": "fd3b26a76ac4ed1d7b2c7bc0168e27b8991ea47542670b038342182ad1a31ea8"
+  },
+  "patchtst": {
+    "architecture": {
+      "lookback": 96,
+      "patch_len": 16,
+      "stride": 8,
+      "d_model": 64,
+      "n_heads": 4,
+      "n_layers": 2,
+      "ffn_dim": 128,
+      "dropout": 0.1
+    },
+    "seed": 42,
+    "device": "cpu",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "loss": "MSE on training-scaled targets",
+    "batch_size": 64,
+    "best_epoch": 10,
+    "scaler_mean": 0.04426831515582318,
+    "scaler_std": 1.1052356956340328,
+    "weights_path": "results/tables/exp005_patchtst_weights_20261116T164839Z_17b6.pt",
+    "weights_sha256": "8268cb09407a5e4748ba5f92ee3c466f2239a3498f890fe33c70d24f5e2ecf2c"
+  },
+  "classical_candidates": ["zero", "constant", "ar1", "ar2"],
+  "classical_fit_partition": "training only",
+  "selection_metric": "validation RMSE; combination weights fit by validation SSE",
+  "test_analysis": {
+    "primary_null": "mean squared loss difference between frozen combination and comparator equals zero",
+    "hac": "Newey-West Bartlett, floor(4*(T/100)^(2/9)) lag, HLN h=1, t(df=T-1)",
+    "multiplicity_adjustment": "none; pairwise tests exploratory"
+  },
+  "validation_sources": {
+    "exp003_forecasts_sha256": "0a0df11b42e3d4fe2869071bc9b6d890796b9c10833fc367bcfed8a88f14c36f",
+    "exp005_forecasts_sha256": "bf10e358b9e9601d5259be865212cacf1b362ae355c2694f9f84d54dcfa3b311"
+  },
+  "disclosure": "The validation-fitted combination improves RMSE by only 0.000211 percentage points over its best constituent. Selection optimism is expected; test results are confirmatory and will not trigger changes."
+}

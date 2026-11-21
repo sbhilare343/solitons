@@ -1,0 +1,336 @@
+{
+  "experiment_id": "EXP-004-S1",
+  "run_id": "20261116T131945Z_8ec9",
+  "created_utc": "2026-11-16T13:19:46+00:00",
+  "git_commit": "879d49d055f91ede5c43d5954071ed1a958c6c18",
+  "constraint": "omega + alpha + beta < 1 via p = 1 - softplus(d)",
+  "source_artifacts": {
+    "exp003": "results/tables/exp003_garch_mean_spec_20261116T113919Z_6cb9.json",
+    "exp004": "results/tables/exp004_variance_proxy_eval_20261116T124356Z_d85f.json"
+  },
+  "train_n": 2815,
+  "validation_n": 603,
+  "test_partition_read": false,
+  "specs": {
+    "zero": {
+      "converged": true,
+      "optimizer": "L-BFGS-B over arch .fix(params).loglikelihood",
+      "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "n_iter": -1,
+      "warnings": [],
+      "effective_sample": 2813,
+      "hold_back": 2,
+      "loglikelihood": -3460.448746441909,
+      "aic": 6928.897492883818,
+      "bic": 6952.665520117777,
+      "parameters": {
+        "omega": 0.02675151843025333,
+        "alpha[1]": 0.15280219952753163,
+        "beta[1]": 0.8204461655482796,
+        "nu": 5.618215827466914
+      },
+      "persistence_omega_alpha_beta": 0.9999998835060646,
+      "persistence_below_one": true,
+      "std_err_pvalues": "not computed under inequality constraints (declared)",
+      "ljung_box_std_resid": {
+        "5": {
+          "stat": 8.207197367355176,
+          "pvalue": 0.14518021090679684
+        },
+        "10": {
+          "stat": 13.64360893395262,
+          "pvalue": 0.1898770197335808
+        },
+        "20": {
+          "stat": 26.76345482916401,
+          "pvalue": 0.1420511494272208
+        }
+      },
+      "ljung_box_squared_std_resid": {
+        "5": {
+          "stat": 4.951968347566165,
+          "pvalue": 0.4217701518990429
+        },
+        "10": {
+          "stat": 9.83199564965426,
+          "pvalue": 0.45535460618913315
+        },
+        "20": {
+          "stat": 14.335536522246679,
+          "pvalue": 0.8130841261421653
+        }
+      },
+      "arch_lm_std_resid": {
+        "stat": 9.67472077771105,
+        "pvalue": 0.46947948689221064,
+        "nlags": 10.0
+      },
+      "arch_lm_raw_resid": {
+        "stat": 1109.2735949727394,
+        "pvalue": 5.287624521250012e-232,
+        "nlags": 10.0
+      },
+      "validation_metrics": {
+        "rmse": 1.1617958191772773,
+        "mae": 0.8635987288473057,
+        "qlike": 1.1279169792805495
+      }
+    },
+    "constant": {
+      "converged": true,
+      "optimizer": "L-BFGS-B over arch .fix(params).loglikelihood",
+      "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "n_iter": -1,
+      "warnings": [],
+      "effective_sample": 2813,
+      "hold_back": 2,
+      "loglikelihood": -3431.52535084744,
+      "aic": 6873.05070169488,
+      "bic": 6902.76073573733,
+      "parameters": {
+        "mu": 0.09225144828785045,
+        "omega": 0.02772704732318508,
+        "alpha[1]": 0.16225493473251187,
+        "beta[1]": 0.8100170179948957,
+        "nu": 5.4316147549713705
+      },
+      "persistence_omega_alpha_beta": 0.9999990000505926,
+      "persistence_below_one": true,
+      "std_err_pvalues": "not computed under inequality constraints (declared)",
+      "ljung_box_std_resid": {
+        "5": {
+          "stat": 9.11631291984026,
+          "pvalue": 0.10451379841798555
+        },
+        "10": {
+          "stat": 14.53769315312855,
+          "pvalue": 0.1498476495636749
+        },
+        "20": {
+          "stat": 29.047562673781012,
+          "pvalue": 0.08682706063354864
+        }
+      },
+      "ljung_box_squared_std_resid": {
+        "5": {
+          "stat": 4.16828654413663,
+          "pvalue": 0.5254501394283557
+        },
+        "10": {
+          "stat": 8.501215720795084,
+          "pvalue": 0.5800004476016583
+        },
+        "20": {
+          "stat": 13.015523268118182,
+          "pvalue": 0.8767170218849709
+        }
+      },
+      "arch_lm_std_resid": {
+        "stat": 8.409396100038304,
+        "pvalue": 0.5889137121964472,
+        "nlags": 10.0
+      },
+      "arch_lm_raw_resid": {
+        "stat": 1105.2533718839368,
+        "pvalue": 3.8899595616734334e-231,
+        "nlags": 10.0
+      },
+      "validation_metrics": {
+        "rmse": 1.1636990914468992,
+        "mae": 0.8651371677630216,
+        "qlike": 1.1178483158031318
+      }
+    },
+    "ar1": {
+      "converged": true,
+      "optimizer": "L-BFGS-B over arch .fix(params).loglikelihood",
+      "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "n_iter": -1,
+      "warnings": [],
+      "effective_sample": 2813,
+      "hold_back": 2,
+      "loglikelihood": -3425.7166613246027,
+      "aic": 6863.433322649205,
+      "bic": 6899.085363500145,
+      "parameters": {
+        "Const": 0.09940261751410981,
+        "return_pct[1]": -0.06601134286372978,
+        "omega": 0.02692966196087353,
+        "alpha[1]": 0.1595723206881357,
+        "beta[1]": 0.8134970174142582,
+        "nu": 5.36192941227399
+      },
+      "persistence_omega_alpha_beta": 0.9999990000632675,
+      "persistence_below_one": true,
+      "std_err_pvalues": "not computed under inequality constraints (declared)",
+      "ljung_box_std_resid": {
+        "5": {
+          "stat": 8.824757671987909,
+          "pvalue": 0.11626147194988273
+        },
+        "10": {
+          "stat": 14.021579234738317,
+          "pvalue": 0.17200958598051777
+        },
+        "20": {
+          "stat": 29.6914965789951,
+          "pvalue": 0.07500912479398417
+        }
+      },
+      "ljung_box_squared_std_resid": {
+        "5": {
+          "stat": 3.9122317619185134,
+          "pvalue": 0.5621204848953043
+        },
+        "10": {
+          "stat": 8.463288357075692,
+          "pvalue": 0.5836795093271043
+        },
+        "20": {
+          "stat": 13.069440882053911,
+          "pvalue": 0.8743847991157172
+        }
+      },
+      "arch_lm_std_resid": {
+        "stat": 8.397812452800236,
+        "pvalue": 0.5900396822965106,
+        "nlags": 10.0
+      },
+      "arch_lm_raw_resid": {
+        "stat": 1051.5001260391157,
+        "pvalue": 1.4992198667767243e-219,
+        "nlags": 10.0
+      },
+      "validation_metrics": {
+        "rmse": 1.1668559175232207,
+        "mae": 0.8692002981816929,
+        "qlike": 1.1141276103534061
+      }
+    },
+    "ar2": {
+      "converged": true,
+      "optimizer": "L-BFGS-B over arch .fix(params).loglikelihood",
+      "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "n_iter": -1,
+      "warnings": [],
+      "effective_sample": 2813,
+      "hold_back": 2,
+      "loglikelihood": -3425.673413304226,
+      "aic": 6865.346826608452,
+      "bic": 6906.940874267881,
+      "parameters": {
+        "Const": 0.1000824655405599,
+        "return_pct[1]": -0.06627223844538865,
+        "return_pct[2]": -0.00573442846883816,
+        "omega": 0.026896149151023906,
+        "alpha[1]": 0.15946124803380182,
+        "beta[1]": 0.8136416028745237,
+        "nu": 5.361115966253372
+      },
+      "persistence_omega_alpha_beta": 0.9999990000593494,
+      "persistence_below_one": true,
+      "std_err_pvalues": "not computed under inequality constraints (declared)",
+      "ljung_box_std_resid": {
+        "5": {
+          "stat": 9.101703284632038,
+          "pvalue": 0.10507567276322062
+        },
+        "10": {
+          "stat": 14.286063390849831,
+          "pvalue": 0.16033868009293184
+        },
+        "20": {
+          "stat": 29.850566828328194,
+          "pvalue": 0.07231146741995677
+        }
+      },
+      "ljung_box_squared_std_resid": {
+        "5": {
+          "stat": 3.92976191719968,
+          "pvalue": 0.5595722749803513
+        },
+        "10": {
+          "stat": 8.451932624594116,
+          "pvalue": 0.5847818040836136
+        },
+        "20": {
+          "stat": 13.066466587218617,
+          "pvalue": 0.8745140755070526
+        }
+      },
+      "arch_lm_std_resid": {
+        "stat": 8.386467725749537,
+        "pvalue": 0.5911427280673665,
+        "nlags": 10.0
+      },
+      "arch_lm_raw_resid": {
+        "stat": 1056.0754196066077,
+        "pvalue": 1.5483923114089056e-220,
+        "nlags": 10.0
+      },
+      "validation_metrics": {
+        "rmse": 1.16656678224794,
+        "mae": 0.8688213282405659,
+        "qlike": 1.1141593779192693
+      }
+    }
+  },
+  "baselines_r2": {
+    "b1": 1.3050482819842542,
+    "b2": 1.1115740070695164
+  },
+  "decision_rule": {
+    "mean_rmse_ranking_exp003": [
+      "zero",
+      "constant",
+      "ar2",
+      "ar1"
+    ],
+    "mean_rmse_ranking_s1": [
+      "zero",
+      "constant",
+      "ar2",
+      "ar1"
+    ],
+    "qlike_r2_ranking_exp003": [
+      "ar2",
+      "ar1",
+      "constant",
+      "zero"
+    ],
+    "qlike_r2_ranking_s1": [
+      "ar1",
+      "ar2",
+      "constant",
+      "zero"
+    ],
+    "rankings_unchanged": false,
+    "beats_b1_exp004": {
+      "zero": true,
+      "constant": true,
+      "ar1": true,
+      "ar2": true
+    },
+    "beats_b1_s1": {
+      "zero": true,
+      "constant": true,
+      "ar1": true,
+      "ar2": true
+    },
+    "beats_b2_exp004": {
+      "zero": false,
+      "constant": false,
+      "ar1": false,
+      "ar2": false
+    },
+    "beats_b2_s1": {
+      "zero": false,
+      "constant": false,
+      "ar1": false,
+      "ar2": false
+    },
+    "baseline_ordering_unchanged": true,
+    "verdict": "MATERIAL: rankings/ordering changed; EXP-003 conclusions must be qualified in EXP-009",
+    "rule_source": "pre-declared in docs/experiment_log.md EXP-004 (S1)"
+  }
+}

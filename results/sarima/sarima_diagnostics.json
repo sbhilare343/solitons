@@ -1,0 +1,94 @@
+{
+  "scope": "supplementary training-only seasonal ARIMA assessment",
+  "data": "S&P 500 daily percentage-point log returns",
+  "training": {
+    "n": 2815,
+    "start": "2010-01-05",
+    "end": "2021-03-11"
+  },
+  "validation": {
+    "n": 603,
+    "start": "2021-03-12",
+    "end": "2023-08-03"
+  },
+  "test_partition_read": false,
+  "seasonal_period": 5,
+  "training_return_acf_lag5": 0.004463023462674225,
+  "candidate_results": [
+    {
+      "model": "ARIMA(0,0,0)",
+      "aic": 8555.953924355092,
+      "aicc": 8555.958191780412,
+      "validation_rmse": 1.16179572344575,
+      "validation_mae": 0.8637931991331633,
+      "converged": true
+    },
+    {
+      "model": "ARIMA(1,0,0)",
+      "aic": 8491.216274466791,
+      "aicc": 8491.224812353665,
+      "validation_rmse": 1.161802077233607,
+      "validation_mae": 0.8639979733133772,
+      "converged": true
+    },
+    {
+      "model": "ARIMA(1,0,1)",
+      "aic": 8478.9664616037,
+      "aicc": 8478.980696479146,
+      "validation_rmse": 1.1617392494603813,
+      "validation_mae": 0.8638410673201973,
+      "converged": true
+    },
+    {
+      "model": "SARIMA(0,0,0)(1,0,0)[5]",
+      "aic": 8557.897833399078,
+      "aicc": 8557.906371285952,
+      "validation_rmse": 1.161807974932584,
+      "validation_mae": 0.8637969403398653,
+      "converged": true
+    },
+    {
+      "model": "SARIMA(1,0,0)(1,0,0)[5]",
+      "aic": 8492.31903423765,
+      "aicc": 8492.333269113095,
+      "validation_rmse": 1.1617633984670515,
+      "validation_mae": 0.8639874817745999,
+      "converged": true
+    },
+    {
+      "model": "SARIMA(0,0,1)(0,0,1)[5]",
+      "aic": 8503.060309998713,
+      "aicc": 8503.074544874158,
+      "validation_rmse": 1.1617902252436618,
+      "validation_mae": 0.8640172015491395,
+      "converged": true
+    },
+    {
+      "model": "SARIMA(1,0,1)(1,0,1)[5]",
+      "aic": 8471.489780617347,
+      "aicc": 8471.51969514726,
+      "validation_rmse": 1.161696168931516,
+      "validation_mae": 0.8633370138205684,
+      "converged": true
+    }
+  ],
+  "diagnostics_for_SARIMA_101_101_5": {
+    "parameter_pvalues": {
+      "intercept": 0.056229776805490905,
+      "ar.L1": 2.413613767365407e-33,
+      "ma.L1": 3.3171364812577124e-13,
+      "ar.S.L5": 5.459805119250357e-46,
+      "ma.S.L5": 7.58345495166639e-57,
+      "sigma2": 0.0
+    },
+    "ljung_box_residual_pvalues_model_df_4": {
+      "5": 0.00023940907866510877,
+      "10": 4.065711633055706e-18,
+      "20": 6.271895373572744e-19
+    },
+    "arch_lm_10_stat": 916.0846528780015,
+    "arch_lm_10_pvalue": 2.197643471456197e-190
+  },
+  "conclusion": "The seasonal candidate has a slightly lower validation RMSE than non-seasonal ARIMA(1,0,1), but the absolute improvement is tiny. Its residual Ljung-Box tests (with model_df=4) and ARCH LM test strongly reject adequacy. Do not replace AR-GARCH with this SARIMA model or claim the seasonal mean is adequately specified.",
+  "units": "RMSE/MAE in percentage points of daily log returns"
+}

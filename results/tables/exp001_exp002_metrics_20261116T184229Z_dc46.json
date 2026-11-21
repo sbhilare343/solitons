@@ -1,0 +1,96 @@
+{
+  "run_id": "20261116T184229Z_dc46",
+  "EXP-001": {
+    "status": "train-only metrics persisted; prior plots/console run are retrospective",
+    "partition": {
+      "n": 2815,
+      "start": "2010-01-05",
+      "end": "2021-03-11"
+    },
+    "adf": {
+      "statistic": -11.704929162217672,
+      "pvalue": 1.5369864830427128e-21,
+      "lags": 26,
+      "nobs": 2788,
+      "critical_values": {
+        "1%": -3.4326976797068176,
+        "5%": -2.8625772395274622,
+        "10%": -2.5673221547820235
+      }
+    },
+    "ljung_box": {
+      "returns": {
+        "5": {
+          "stat": 106.17506168348139,
+          "pvalue": 2.632953354782201e-21
+        },
+        "10": {
+          "stat": 251.3555650896504,
+          "pvalue": 2.8157052178240953e-48
+        },
+        "20": {
+          "stat": 309.28653767919366,
+          "pvalue": 1.0217786881350788e-53
+        }
+      },
+      "squared_returns": {
+        "5": {
+          "stat": 2344.991567527988,
+          "pvalue": 0.0
+        },
+        "10": {
+          "stat": 3539.887015909016,
+          "pvalue": 0.0
+        },
+        "20": {
+          "stat": 4117.661171845881,
+          "pvalue": 0.0
+        }
+      }
+    },
+    "arch_lm_10": {
+      "stat": 1110.0004616272163,
+      "pvalue": 3.6860345170181284e-232
+    },
+    "skew": -0.8582779931194775,
+    "excess_kurtosis": 16.146080321025615
+  },
+  "EXP-002": {
+    "status": "validation metrics reconstructed from frozen forecast artifact",
+    "n": 603,
+    "start": "2021-03-12",
+    "end": "2023-08-03",
+    "metrics": {
+      "zero_forecast": {
+        "rmse": 1.1617958191772773,
+        "mae": 0.8635987288473057
+      },
+      "training_mean_forecast": {
+        "rmse": 1.16179572344575,
+        "mae": 0.8637931991331633
+      },
+      "ARIMA_0_0_0": {
+        "rmse": 1.1617956281551516,
+        "mae": 0.8637931244641525
+      },
+      "ARIMA_1_0_0": {
+        "rmse": 1.1760505633119642,
+        "mae": 0.8838798613151697
+      },
+      "ARIMA_1_0_1": {
+        "rmse": 1.179388342447504,
+        "mae": 0.8869787424491699
+      },
+      "ARIMA_2_0_0": {
+        "rmse": 1.183053524217194,
+        "mae": 0.8882940754405952
+      },
+      "ARIMA_2_0_1": {
+        "rmse": 1.1828603927109242,
+        "mae": 0.8881808447603593
+      }
+    },
+    "source": "results/forecasts/validation_arima_candidates.csv"
+  },
+  "test_partition_read": false
+}

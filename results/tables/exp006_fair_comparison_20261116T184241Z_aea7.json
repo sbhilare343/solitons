@@ -1,0 +1,49 @@
+{
+  "experiment_id": "EXP-006",
+  "run_id": "20261116T184241Z_aea7",
+  "window": {
+    "n": 603,
+    "start": "2021-03-12",
+    "end": "2023-08-03"
+  },
+  "forecast_columns": [
+    "zero",
+    "constant",
+    "ar1",
+    "ar2",
+    "training",
+    "patchtst"
+  ],
+  "metrics": {
+    "zero": {
+      "rmse": 1.1617958191772773,
+      "mae": 0.8635987288473057
+    },
+    "constant": {
+      "rmse": 1.163700504461006,
+      "mae": 0.8651384509853453
+    },
+    "ar1": {
+      "rmse": 1.1668852147248003,
+      "mae": 0.8692395620812563
+    },
+    "ar2": {
+      "rmse": 1.1666000087153117,
+      "mae": 0.8688657903300006
+    },
+    "training": {
+      "rmse": 1.16179572344575,
+      "mae": 0.8637931991331633
+    },
+    "patchtst": {
+      "rmse": 1.2951981551384082,
+      "mae": 1.0005544474075112
+    }
+  },
+  "sources": [
+    "results/forecasts/exp003_validation_forecasts_20261116T113919Z_6cb9.csv",
+    "results/forecasts/exp005_patchtst_validation_20261116T164839Z_17b6.csv"
+  ],
+  "test_partition_read": false,
+  "forecast_units": "return_pct percentage points"
+}

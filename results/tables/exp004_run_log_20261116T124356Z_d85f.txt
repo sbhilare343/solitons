@@ -1,0 +1,31 @@
+
+=== EXP-004 : variance evaluation across proxies ===
+source forecasts: results/forecasts/exp003_validation_forecasts_20261116T113919Z_6cb9.csv (EXP-003 run 20261116T113919Z_6cb9)
+validation dates: 603 (2021-03-12 -> 2023-08-03), test unread
+model                 p1_squared_return       p2_parkinson        p3_ewma_094
+-----------------------------------------------------------------------------
+zero                             1.1256             0.7147             1.1052 *
+constant                         1.1153             0.7050             1.1124 *
+ar1                              1.1122             0.7061             1.1117 *
+ar2                              1.1122             0.7057             1.1117 *
+b1_constant_variance             1.3050             0.8821             1.3222
+b2_ewma_forecast                 1.1116             0.7172             1.0749
+  (* = GARCH candidate; lower QLIKE is better)
+
+candidate rankings (best -> worst):
+  p1_squared_return: ar2 > ar1 > constant > zero
+  p2_parkinson: constant > ar2 > ar1 > zero
+  p3_ewma_094: zero > ar2 > ar1 > constant
+ranking stable across proxies: False
+
+mean forecasts (RMSE / MAE):
+  zero                           rmse=1.1618  mae=0.8636
+  constant                       rmse=1.1637  mae=0.8651
+  ar1                            rmse=1.1669  mae=0.8692
+  ar2                            rmse=1.1666  mae=0.8689
+  b0_zero_forecast               rmse=1.1618  mae=0.8636
+  b0_training_mean_forecast      rmse=1.1618  mae=0.8638
+
+Run ID          : 20261116T124356Z_d85f
+JSON artifact   : results/tables/exp004_variance_proxy_eval_20261116T124356Z_d85f.json
+CSV artifact    : results/tables/exp004_qlike_by_proxy_20261116T124356Z_d85f.csv

@@ -1,0 +1,124 @@
+{
+  "experiment_id": "EXP-005",
+  "run_id": "20261116T184230Z_06c3",
+  "created_utc": "2026-11-16T18:42:41+00:00",
+  "git_commit": "6fb7b570eb9005c2f2d5dac1b3dbc4d39494a16b",
+  "seed": 42,
+  "device": "cpu",
+  "torch_version": "2.14.0+cu130",
+  "python": "3.13.11",
+  "architecture": {
+    "lookback": 96,
+    "patch_len": 16,
+    "stride": 8,
+    "d_model": 64,
+    "n_heads": 4,
+    "n_layers": 2,
+    "ffn_dim": 128,
+    "dropout": 0.1
+  },
+  "architecture_config_hash": "7ed687bc71a8",
+  "train_config": {
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 64,
+    "max_epochs": 50,
+    "early_stopping_patience": 8,
+    "loss": "MSE (on scaled targets)",
+    "internal_val_fraction": 0.15,
+    "best_epoch": 10
+  },
+  "parameter_count": 69441,
+  "scaler": {
+    "mean": 0.04426831515582318,
+    "std": 1.1052356956340328,
+    "fit_on": "train partition only"
+  },
+  "split": {
+    "train_n": 2815,
+    "validation_n": 603,
+    "internal_val_n": 423,
+    "internal_val_target_range": [
+      "2019-07-09",
+      "2021-03-11"
+    ],
+    "test_partition_read": false
+  },
+  "phase1": {
+    "purpose": "epoch selection only (early stopping on internal split)",
+    "train_windows": 2296,
+    "internal_val_windows": 423,
+    "best_epoch": 10,
+    "history": {
+      "train": [
+        1.9364814783222584,
+        1.077604131623843,
+        0.9023003879324485,
+        0.7783884339631643,
+        0.663930402607868,
+        0.6249266564846039,
+        0.564160491427478,
+        0.5352133206166457,
+        0.5112149314597924,
+        0.47123229773617786,
+        0.41804065189295114,
+        0.4162040397472913,
+        0.3710070276301912,
+        0.36775060865106485,
+        0.3483689928927073,
+        0.3102368174010453,
+        0.301729722876582,
+        0.2972295625907619
+      ],
+      "val": [
+        3.0990875280213412,
+        2.995661691007321,
+        2.958516672711564,
+        2.924736252349601,
+        2.903641362844066,
+        2.901228102668239,
+        2.8245417719473513,
+        2.8584773574315063,
+        2.8404288686477264,
+        2.82052482217198,
+        2.831282419234021,
+        2.921233933586319,
+        2.874508292680655,
+        2.8672260116459913,
+        2.8998060505440892,
+        2.8697329835688814,
+        2.8833466269445758,
+        2.917167468555712
+      ]
+    }
+  },
+  "phase2": {
+    "purpose": "final weights on ALL train windows for best_epoch epochs",
+    "train_windows": 2719,
+    "history": {
+      "train": [
+        2.1543385877728505,
+        1.2746771263611496,
+        1.0494487736978353,
+        0.9410812527039947,
+        0.8626099824466965,
+        0.7899983272520923,
+        0.7607448384269891,
+        0.6940116522043844,
+        0.6299068563429036,
+        0.6124731184213904
+      ],
+      "val": []
+    }
+  },
+  "validation_metrics": {
+    "rmse": 1.2951981551384082,
+    "mae": 1.0005544474075112,
+    "zero_baseline_rmse": 1.1617958191772773,
+    "beats_zero_baseline": false
+  },
+  "forecast_units": "return_pct (percentage-point log return)",
+  "model_weights_path": "results/tables/exp005_patchtst_weights_20261116T184230Z_06c3.pt",
+  "model_weights_sha256": "a5403f39dc8cae1b98943039347c5776174363b987ea57ccacabf6e2c8fff5f6"
+}

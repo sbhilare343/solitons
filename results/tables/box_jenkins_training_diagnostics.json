@@ -1,0 +1,122 @@
+{
+  "scope": "training_only_supplementary_box_jenkins",
+  "n": 2815,
+  "start": "2010-01-05",
+  "end": "2021-03-11",
+  "adf": {
+    "statistic": -11.704929162217715,
+    "pvalue": 1.5369864830423818e-21,
+    "used_lags": 26
+  },
+  "candidate_grid": "ARIMA(p,0,q), p=0..3, q=0..3, constant; ranked by AICc",
+  "top_candidates": [
+    {
+      "p": 2,
+      "d": 0,
+      "q": 2,
+      "aic": 8404.261042354967,
+      "bic": 8439.91734759841,
+      "aicc": 8404.29095688488,
+      "warnings": []
+    },
+    {
+      "p": 1,
+      "d": 0,
+      "q": 3,
+      "aic": 8461.35185432268,
+      "bic": 8497.008159566123,
+      "aicc": 8461.381768852594,
+      "warnings": []
+    },
+    {
+      "p": 3,
+      "d": 0,
+      "q": 2,
+      "aic": 8464.025166177325,
+      "bic": 8505.624188961341,
+      "aicc": 8464.065066426701,
+      "warnings": []
+    },
+    {
+      "p": 3,
+      "d": 0,
+      "q": 3,
+      "aic": 8465.490972765208,
+      "bic": 8513.032713089799,
+      "aicc": 8465.542291368201,
+      "warnings": [
+        "Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.",
+        "Non-invertible starting MA parameters found. Using zeros as starting parameters."
+      ]
+    },
+    {
+      "p": 2,
+      "d": 0,
+      "q": 3,
+      "aic": 8466.768166135804,
+      "bic": 8508.36718891982,
+      "aicc": 8466.80806638518,
+      "warnings": [
+        "Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.",
+        "Non-invertible starting MA parameters found. Using zeros as starting parameters."
+      ]
+    },
+    {
+      "p": 0,
+      "d": 0,
+      "q": 3,
+      "aic": 8471.604992075449,
+      "bic": 8501.318579778317,
+      "aicc": 8471.62635199001,
+      "warnings": []
+    },
+    {
+      "p": 3,
+      "d": 0,
+      "q": 1,
+      "aic": 8471.90880296451,
+      "bic": 8507.565108207953,
+      "aicc": 8471.938717494424,
+      "warnings": []
+    },
+    {
+      "p": 2,
+      "d": 0,
+      "q": 0,
+      "aic": 8473.304840923029,
+      "bic": 8497.075711085325,
+      "aicc": 8473.319075798474,
+      "warnings": []
+    }
+  ],
+  "selected_order": {
+    "p": 2,
+    "d": 0,
+    "q": 2
+  },
+  "selected_aic": 8404.261042354967,
+  "selected_bic": 8439.91734759841,
+  "selected_aicc": 8404.29095688488,
+  "diagnostics": {
+    "ljung_box_residuals_model_df_p_plus_q": {
+      "10": {
+        "stat": 25.711989700994064,
+        "pvalue": 0.00025189179540272916
+      },
+      "20": {
+        "stat": 41.491797235379295,
+        "pvalue": 0.00046961393047144216
+      }
+    },
+    "arch_lm_10": {
+      "stat": 877.4231348886252,
+      "pvalue": 4.5968565454534204e-182
+    },
+    "jarque_bera": {
+      "stat": 15174.517026690295,
+      "pvalue": 0.0
+    }
+  },
+  "interpretation": "Ljung-Box degrees of freedom are adjusted by p+q for the fitted ARMA model. The ADF rejects a unit root in returns. The AICc-selected ARMA mean screen leaves residual autocorrelation and strong ARCH effects; this motivates conditional-variance modelling. It is a training-only screening result, not a claim that ARMA(2,2) is the final forecasting model.",
+  "test_partition_read": false
+}

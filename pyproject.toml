@@ -1,0 +1,30 @@
+[project]
+name = "solitons"
+version = "0.1.0"
+description = "One-step-ahead S&P 500 return forecasting with AR-GARCH and PatchTST"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "arch>=8.0.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.3",
+    "pandas>=3.0.6",
+    "requests>=2.34.2",
+    "scikit-learn>=1.9.1",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.15.0",
+    "tensorflow>=2.21.0",
+    "torch>=2.14.0",
+    "yfinance>=1.7.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+# Make the repository root importable so tests can import the src package.
+
+pythonpath = ["."]
+testpaths = ["tests"]

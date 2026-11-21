@@ -1,0 +1,128 @@
+{
+  "experiment_id": "EXP-004",
+  "run_id": "20261116T124356Z_d85f",
+  "created_utc": "2026-11-16T12:43:57+00:00",
+  "git_commit": "447d1b5f8145fbfcdd223ceb63a2100e22cf0656",
+  "source": {
+    "forecast_artifact": "results/forecasts/exp003_validation_forecasts_20261116T113919Z_6cb9.csv",
+    "exp003_run_id": "20261116T113919Z_6cb9",
+    "raw_ohlc": "data/raw/sp500.csv"
+  },
+  "partition": {
+    "validation_dates": {
+      "n": 603,
+      "start": "2021-03-12",
+      "end": "2023-08-03"
+    },
+    "train_used_for_initialization_only": {
+      "n": 2815,
+      "end": "2021-03-11",
+      "variance": 1.2219800388321818
+    },
+    "test_partition_read": false
+  },
+  "ewma_lambda": 0.94,
+  "proxies": {
+    "p1_squared_return": "q_t = r_t^2 (return_pct^2 units)",
+    "p2_parkinson": "q_t = ln(H_t/L_t)^2 / (4 ln 2) x 1e4 (raw OHLC, decimal^2 -> return_pct^2)",
+    "p3_ewma_094": "q_t = 0.94*q_{t-1} + 0.06*r_t^2, state initialized with training variance"
+  },
+  "baselines": {
+    "b1_constant_variance": "training sample variance (ddof=1), frozen",
+    "b2_ewma_forecast": "s_t = 0.94*s_{t-1} + 0.06000000000000005*r_{t-1}^2; first forecast = 0.94*train_var + 0.06000000000000005*r_{train_last}^2"
+  },
+  "mean_metrics": {
+    "zero": {
+      "rmse": 1.1617958191772773,
+      "mae": 0.8635987288473057
+    },
+    "constant": {
+      "rmse": 1.163700504461006,
+      "mae": 0.8651384509853453
+    },
+    "ar1": {
+      "rmse": 1.1668852147248003,
+      "mae": 0.8692395620812563
+    },
+    "ar2": {
+      "rmse": 1.1666000087153117,
+      "mae": 0.8688657903300006
+    },
+    "b0_zero_forecast": {
+      "rmse": 1.1617958191772773,
+      "mae": 0.8635987288473057
+    },
+    "b0_training_mean_forecast": {
+      "rmse": 1.16179572344575,
+      "mae": 0.8637931991331633
+    }
+  },
+  "qlike": {
+    "p1_squared_return": {
+      "zero": 1.1255711055937343,
+      "constant": 1.115304487080184,
+      "ar1": 1.1122441631335196,
+      "ar2": 1.112231080783123,
+      "b1_constant_variance": 1.3050482819842542,
+      "b2_ewma_forecast": 1.1115740070695164
+    },
+    "p2_parkinson": {
+      "zero": 0.714675627385408,
+      "constant": 0.7049791060234691,
+      "ar1": 0.706126300946555,
+      "ar2": 0.7057371369816555,
+      "b1_constant_variance": 0.882072968372838,
+      "b2_ewma_forecast": 0.7172229544918378
+    },
+    "p3_ewma_094": {
+      "zero": 1.1051642281073264,
+      "constant": 1.1123673652672288,
+      "ar1": 1.1117103487284206,
+      "ar2": 1.1116876039739816,
+      "b1_constant_variance": 1.3221965875753399,
+      "b2_ewma_forecast": 1.07493556302348
+    }
+  },
+  "candidate_rankings_by_proxy": {
+    "p1_squared_return": [
+      "ar2",
+      "ar1",
+      "constant",
+      "zero"
+    ],
+    "p2_parkinson": [
+      "constant",
+      "ar2",
+      "ar1",
+      "zero"
+    ],
+    "p3_ewma_094": [
+      "zero",
+      "ar2",
+      "ar1",
+      "constant"
+    ]
+  },
+  "candidate_ranking_stable_across_proxies": false,
+  "qlike_improvement_vs_b2_ewma_forecast": {
+    "p1_squared_return": {
+      "zero": -0.012592142705026902,
+      "constant": -0.0033560338645399522,
+      "ar1": -0.000602889290088729,
+      "ar2": -0.0005911200778605371
+    },
+    "p2_parkinson": {
+      "zero": 0.003551653067538271,
+      "constant": 0.017071188800759467,
+      "ar1": 0.01547169325212814,
+      "ar2": 0.01601429156477591
+    },
+    "p3_ewma_094": {
+      "zero": -0.02812137408387713,
+      "constant": -0.0348223684575697,
+      "ar1": -0.034211153644878756,
+      "ar2": -0.034189994465462455
+    }
+  },
+  "robustness_sensitivity_registered": "EXP-004-S1 (persistence>1 constrained refit)"
+}

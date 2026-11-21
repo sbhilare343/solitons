@@ -1,0 +1,29 @@
+<environment>/.venv/lib/python3.13/site-packages/statsmodels/stats/diagnostic.py:997: FutureWarning: acorr_lm currently returns a plain tuple whose length depends on the store argument. In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning an LMTestResult NamedTuple. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning.
+  return acorr_lm(
+<environment>/.venv/lib/python3.13/site-packages/statsmodels/stats/diagnostic.py:997: FutureWarning: acorr_lm currently returns a plain tuple whose length depends on the store argument. In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning an LMTestResult NamedTuple. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning.
+  return acorr_lm(
+<environment>/.venv/lib/python3.13/site-packages/statsmodels/stats/diagnostic.py:997: FutureWarning: acorr_lm currently returns a plain tuple whose length depends on the store argument. In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning an LMTestResult NamedTuple. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning.
+  return acorr_lm(
+<environment>/.venv/lib/python3.13/site-packages/statsmodels/stats/diagnostic.py:997: FutureWarning: acorr_lm currently returns a plain tuple whose length depends on the store argument. In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning an LMTestResult NamedTuple. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning.
+  return acorr_lm(
+
+=== EXP-003 : joint mean specification comparison ===
+train n=2815 (2010-01-05 -> 2021-03-11), validation n=603, hold_back=2
+spec       conv   n_eff         logL        AIC        BIC  persist     RMSE      MAE      QLIKE
+------------------------------------------------------------------------------------------------
+zero       True    2813    -3458.991   6925.982   6949.750   1.0164   1.1618   0.8636     1.1256
+constant   True    2813    -3429.715   6869.429   6899.139   1.0201   1.1637   0.8651     1.1153
+ar1        True    2813    -3423.881   6859.763   6895.415   1.0200   1.1669   0.8692     1.1122
+ar2        True    2813    -3423.840   6861.680   6903.274   1.0200   1.1666   0.8689     1.1122
+------------------------------------------------------------------------------------------------
+zero       -          -            -          -          -        -   1.1618   0.8636
+train_mean -          -            -          -          -        -   1.1618   0.8638
+train_var  (QLIKE baseline) = 1.3050
+[diag] zero: LB(z) p@10=0.2051 | LB(z^2) p@10=0.5447 | ARCHLM(z) p=0.5645 | persist<1=False
+[diag] constant: LB(z) p@10=0.1624 | LB(z^2) p@10=0.6405 | ARCHLM(z) p=0.654 | persist<1=False
+[diag] ar1: LB(z) p@10=0.1884 | LB(z^2) p@10=0.6546 | ARCHLM(z) p=0.666 | persist<1=False
+[diag] ar2: LB(z) p@10=0.1771 | LB(z^2) p@10=0.6569 | ARCHLM(z) p=0.6683 | persist<1=False
+
+Run ID          : 20261116T113919Z_6cb9
+Table artifact  : results/tables/exp003_garch_mean_spec_20261116T113919Z_6cb9.json
+Forecast artifact: results/forecasts/exp003_validation_forecasts_20261116T113919Z_6cb9.csv

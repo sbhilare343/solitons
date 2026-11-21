@@ -1,0 +1,27 @@
+<environment>/.venv/lib/python3.13/site-packages/statsmodels/stats/diagnostic.py:997: FutureWarning: acorr_lm currently returns a plain tuple whose length depends on the store argument. In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning an LMTestResult NamedTuple. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning.
+  return acorr_lm(
+<environment>/.venv/lib/python3.13/site-packages/statsmodels/stats/diagnostic.py:997: FutureWarning: acorr_lm currently returns a plain tuple whose length depends on the store argument. In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning an LMTestResult NamedTuple. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning.
+  return acorr_lm(
+<environment>/.venv/lib/python3.13/site-packages/statsmodels/stats/diagnostic.py:997: FutureWarning: acorr_lm currently returns a plain tuple whose length depends on the store argument. In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning an LMTestResult NamedTuple. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning.
+  return acorr_lm(
+<environment>/.venv/lib/python3.13/site-packages/statsmodels/stats/diagnostic.py:997: FutureWarning: acorr_lm currently returns a plain tuple whose length depends on the store argument. In release 0.16 or after July 2027, whichever is later, the default behavior will switch to always returning an LMTestResult NamedTuple. Set result_object=True to switch now, or result_object=False to keep the current behavior and silence this warning.
+  return acorr_lm(
+
+=== EXP-004-S1 : persistence-constrained refit ===
+spec       conv   n_eff         logL        AIC  persist     RMSE    QLIKE
+zero       True    2813    -3460.449   6928.897  1.00000   1.1618   1.1279
+constant   True    2813    -3431.525   6873.051  1.00000   1.1637   1.1178
+ar1        True    2813    -3425.717   6863.433  1.00000   1.1669   1.1141
+ar2        True    2813    -3425.673   6865.347  1.00000   1.1666   1.1142
+baselines (r^2 QLIKE): b1 constant=1.3050, b2 ewma=1.1116
+
+decision rule:
+  mean RMSE ranking  exp003 -> ['zero', 'constant', 'ar2', 'ar1']
+  mean RMSE ranking  s1     -> ['zero', 'constant', 'ar2', 'ar1']
+  QLIKE r^2 ranking  exp003 -> ['ar2', 'ar1', 'constant', 'zero']
+  QLIKE r^2 ranking  s1     -> ['ar1', 'ar2', 'constant', 'zero']
+  rankings unchanged: False | baseline ordering unchanged: True
+  VERDICT: MATERIAL: rankings/ordering changed; EXP-003 conclusions must be qualified in EXP-009
+
+Run ID        : 20261116T131945Z_8ec9
+Artifact      : results/tables/exp004s1_constrained_garch_20261116T131945Z_8ec9.json
